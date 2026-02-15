@@ -213,49 +213,50 @@
 
 }
 
-/* --- АДАПТИВНОСТЬ (Media Queries) --- */
-
-/* Планшеты и узкие ноутбуки (до 1024px) */
-@media (max-width: 1024px) {
-    .MainPageCardsBlock {
-        gap: 20px;
-    }
-    
-    .MainPageCardsBlock_right-side {
-        /* Немного уменьшаем масштаб карточек, чтобы влезли */
-        transform: scale(0.9); 
-        transform-origin: left center;
-    }
+.MainPagePercents {
+    font-family: 'Inter', sans-serif;
+    max-width: 60%;
+    display: flex;
+    margin-left: 20%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
 }
 
-/* Мобильные устройства (до 768px) */
-@media (max-width: 768px) {
-    .MainPageCardsBlock {
-        flex-direction: column; /* Текст сверху, карты снизу */
-        padding: 40px 16px;
-        text-align: center; /* Центрируем текст на мобильных */
-    }
-    .MainPageCardsBlock_left-side {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 40px; /* Отступ до карточек */
-    }
+.MainPagePercents_one_div {
+    text-align: center;
     
-    .MainPageCardsBlock_MainText {
-        font-size: 32px; /* Принудительно уменьшаем заголовок */
-    }
-    
-    .MainPageCardsBlock_right-side {
-        width: 100%;
-        justify-content: center; /* Центрируем карты */
-        transform: scale(1); /* Сбрасываем масштаб */
-        height: 350px; /* Чуть меньше высота */
-    }
+}
 
-    .CardsContainer {
-        /* На мобильном карты по центру */
-        margin: 0 auto; 
-        max-width: 340px;
-    }
+.MainPagePercents_main_text {
+    font-size: 48px;
+    font-weight: 300;
+    color: #111827;
+    margin: 0 0 8px 0;
+}
+
+.MainPagePercents_dop_text {
+    font-size: 16px;
+    color: #6B7280;
+    display: block;
+}
+
+.MainPageOp_head {
+    text-align: center;
+    align-items: center;
+    height: 20px;
+}
+
+.MainPageOp_head_main_text {
+    text-align: center;
+}
+
+.MainPageOp_head_dop_text {
+    text-align: center;
+}
+
+.MainPageOp_container {
+    margin-top: 30px;
 }
