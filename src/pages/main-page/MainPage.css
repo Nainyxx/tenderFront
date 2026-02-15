@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.MainPageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+}
+
+.MainPageHeader_Logo {
+    height: 40px;
+    width: auto;
+}
+
+.MainPageHeader_Navigation {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.MainPageHeader_Text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.MainPageHeader_Text span {
+    cursor: pointer;
+    font-size: 16px;
+    color: #787878;
+    transition: color 0.3s ease;
+}
+
+.MainPageHeader_Text span:hover {
+    color: #000000;
+}
+
+.MainPageHeader_Buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.MainPageHeader_Button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 30px;
+    color:#ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg,#0B0B0B,#606060);
+}
