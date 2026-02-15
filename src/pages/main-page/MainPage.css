@@ -56,3 +56,206 @@
     transition: all 0.3s ease;
     background: linear-gradient(90deg,#0B0B0B,#606060);
 }
+
+/* --- Основной контейнер --- */
+.MainPageCardsBlock {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px; /* Добавил боковые отступы для узких экранов */
+    font-family: 'Inter', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible; /* Чтобы тени не обрекались */
+}
+
+/* --- Левая часть (Текст) --- */
+.MainPageCardsBlock_left-side {
+    flex: 1 1 450px; /* Растет, сжимается, базовая ширина 450px */
+    z-index: 10;
+    min-width: 300px; /* Чтобы не сжимался слишком сильно */
+}
+
+.MainPageCardsBlock_DopText {
+    display: inline-flex;
+    align-items: center;
+    background: #F3F4F6;
+    padding: 6px 16px 6px 6px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.MainPageCardsBlock_Molnia {
+    width: 24px;
+    height: 24px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.MainPageCardsBlock_MainText {
+    font-size: clamp(36px, 5vw, 56px); /* Адаптивный размер шрифта */
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+.MainPageCardsBlock_Desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6B7280;
+    max-width: 720px;
+    margin-bottom: 10px;
+}
+
+.MainPageCardsBlock_Btn {
+    position: relative;
+    background: linear-gradient(90deg,#0B0B0B,#606060);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    left: 50%;
+}
+
+.MainPageCardsBlock_Btn:hover {
+    background: #000;
+}
+
+/* --- Правая часть (Карточки) --- */
+.MainPageCardsBlock_right-side {
+    flex: 1 1 450px; /* Адаптивная ширина */
+    height: 400px; 
+    display: flex;
+    /* ИЗМЕНЕНИЕ: Карточки теперь прижаты влево (к центру композиции), а не вправо */
+    justify-content: flex-start; 
+    align-items: center;
+    position: relative;
+    /* На маленьких экранах добавим отступ сверху */
+    min-width: 300px;
+}
+
+.CardsContainer {
+    position: relative;
+    width: 100%; 
+    max-width: 380px; /* Ограничиваем ширину контейнера карт */
+    height: 100%;
+}
+
+.TenderCard {
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    left: 0;
+}
+
+.TenderCard_Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.TenderCard_Title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1F2937;
+    line-height: 1.4;
+}
+
+.TenderCard_Badge {
+    background: #DCFCE7; /* Светло-зеленый */
+    color: #166534;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.TenderCard_Footer {
+    font-size: 13px;
+    color: #6B7280;
+    display: flex;
+    flex-wrap: wrap; /* Чтобы цена и дата не ломались */
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    font-size: 12px;
+}
+
+.MainPageCardBlock_bottom-side {
+    position: relative;
+    width: 70%;
+    left: 30%;
+
+}
+
+/* --- АДАПТИВНОСТЬ (Media Queries) --- */
+
+/* Планшеты и узкие ноутбуки (до 1024px) */
+@media (max-width: 1024px) {
+    .MainPageCardsBlock {
+        gap: 20px;
+    }
+    
+    .MainPageCardsBlock_right-side {
+        /* Немного уменьшаем масштаб карточек, чтобы влезли */
+        transform: scale(0.9); 
+        transform-origin: left center;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    .MainPageCardsBlock {
+        flex-direction: column; /* Текст сверху, карты снизу */
+        padding: 40px 16px;
+        text-align: center; /* Центрируем текст на мобильных */
+    }
+    .MainPageCardsBlock_left-side {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px; /* Отступ до карточек */
+    }
+    
+    .MainPageCardsBlock_MainText {
+        font-size: 32px; /* Принудительно уменьшаем заголовок */
+    }
+    
+    .MainPageCardsBlock_right-side {
+        width: 100%;
+        justify-content: center; /* Центрируем карты */
+        transform: scale(1); /* Сбрасываем масштаб */
+        height: 350px; /* Чуть меньше высота */
+    }
+
+    .CardsContainer {
+        /* На мобильном карты по центру */
+        margin: 0 auto; 
+        max-width: 340px;
+    }
+}
