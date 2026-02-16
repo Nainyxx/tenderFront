@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MolniaLogo from "../../assets/molnia.svg";
 
-function MainPageCardsBlock() {
+function MainPageCardsBlock({ onTryFreeClick }) {
     const tenders = [
         { id: 1, title: "Разработка ПО для бизнеса", percent: "98%", price: "3 200 000 ₽", date: "18.02.2026" },
         { id: 2, title: "Кибербезопасность предприятия", percent: "85%", price: "6 500 000 ₽", date: "19.02.2026" },
@@ -23,9 +23,9 @@ function MainPageCardsBlock() {
 
     const getCardStyle = (index) => {
         const styles = [
-            { top: "0px", rotate: "6deg", zIndex: 3, opacity: 1, scale: 1 },
+            { top: "0px", rotate: "-6deg", zIndex: 3, opacity: 1, scale: 1 },
             { top: "90px", rotate: "0deg", zIndex: 2, opacity: 0.9, scale: 0.95 },
-            { top: "180px", rotate: "-6deg", zIndex: 1, opacity: 0.8, scale: 0.9 } 
+            { top: "180px", rotate: "6deg", zIndex: 1, opacity: 0.8, scale: 0.9 } 
         ];
         return styles[index];
     };
@@ -44,7 +44,6 @@ function MainPageCardsBlock() {
                     Выигрывайте тендеры <br />
                     <span style={{ color: "#9CA3AF" }}>на автопилоте</span>
                 </h1>
-
             </div>
 
             <div className="MainPageCardsBlock_right-side">
@@ -80,7 +79,10 @@ function MainPageCardsBlock() {
                 <p className="MainPageCardsBlock_Desc">
                     TenderPilot находит релевантные тендеры по вашим SKU, анализирует документацию и автоматически готовит заявки. Экономьте до 80% времени на госзакупках.
                 </p>
-               <button className="MainPageCardsBlock_Btn">
+               <button 
+                    className="MainPageCardsBlock_Btn"
+                    onClick={onTryFreeClick}
+                >
                     Попробовать бесплатно
                 </button>
             </div>
